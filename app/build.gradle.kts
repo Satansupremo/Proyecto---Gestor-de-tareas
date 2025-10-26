@@ -41,8 +41,8 @@ android {
 
 dependencies {
 
-    // SQL LITE
-
+    // Jetpack Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.8.3")
     // ---
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
