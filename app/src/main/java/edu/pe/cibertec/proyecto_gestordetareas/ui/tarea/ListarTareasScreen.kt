@@ -1,6 +1,5 @@
 package edu.pe.cibertec.proyecto_gestordetareas.ui.tarea
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -140,17 +139,20 @@ fun ListarTareasScreen(navController: NavHostController) {
             // Lista de tareas filtradas
             LazyColumn {
                 items(tareasFiltradas) { tarea ->
+                    // Buscar color de la prioridad correspondiente
+                    val colorPrioridad = prioridades.find { it.id_prioridad == tarea.id_prioridad }?.color ?: MaterialTheme.colorScheme.surfaceVariant
+
                     TareaItem(
                         tarea = tarea,
                         onClick = { navController.navigate("editar_tarea/${tarea.id_tarea}") },
                         onCompletadoChange = { tareaActualizada ->
                             tareaModel.editarTarea(tareaActualizada)
                             tareas = tareaModel.listarTareas()
-                        }
+                        },
+                        prioridadColor = colorPrioridad // <-- pasamos el color
                     )
                 }
             }
         }
     }
 }
-

@@ -67,7 +67,7 @@ class SqlLiteConnection(context: Context) :
             ('Alta', 'Tareas urgentes o críticas', ${0xFFFF0000}),  -- Rojo
             ('Media', 'Tareas importantes pero no urgentes', ${0xFFFFFF00}),  -- Amarillo
             ('Baja', 'Tareas que pueden esperar', ${0xFF00FF00}),  -- Verde
-            ('Ninguna', 'Sin prioridad definida', ${0xFFFFFFFF})  -- Blanco
+            ('Ninguna', 'Sin prioridad definida', ${0xFFE0E0E0})  -- Creo que es gris
         """.trimIndent())
 
         // TAREAS DE EJEMPLO
